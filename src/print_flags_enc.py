@@ -3,7 +3,7 @@ from typing import Tuple
 
 def bad_otp(data: bytes):
     keys = [0x01, 0x02, 0x03]
-    return "".join([ f"\\x{i ^ keys[i % len(keys)]:x}" for i in data ])
+    return "".join([ f"\\x{i ^ keys[idx % len(keys)]:x}" for idx, i in enumerate(list(data)) ])
 
 level2_flag = b"workshop{Super_SecretLevel2}"
 print("Level 2 enc_flag is: " + "".join([ f"\\x{i ^ 0x23:x}" for i in level2_flag ]))

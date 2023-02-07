@@ -6,16 +6,15 @@
 
 int check_flag(char *input)
 {
-    const char *enc_flag = "\x74\x6e\x73\x68\x71\x6b\x6e\x72\x7a\x50\x63\x6d\x66\x6e\x6f\x5c\x67\x6d\x63\x65\x5c\x6b\x66\x73\x66\x7e";
+    const char *enc_flag = "\x76\x6d\x71\x6a\x71\x6b\x6e\x72\x78\x53\x63\x6d\x65\x6d\x6e\x5e\x64\x6f\x60\x65\x5c\x69\x67\x71\x64\x7f";
 
     char *new_input = malloc(40);
     memset(new_input, 0, 40);
-    unsigned char keys[] = {0x01, 0x02, 0x03};
-    for (int i = 0; i < strlen(enc_flag); i++)
+    unsigned char keys[] = {1, 2, 3};
+    for (int i = 0; i < strlen(input); i++)
     {
-        new_input[i] = (enc_flag[i] ^ keys[i % 3]);
+        new_input[i] = (input[i] ^ keys[i % 3]);
     }
-    printf("Result is %s \n", new_input);
     return strncmp(new_input, enc_flag, 26);
 }
 
