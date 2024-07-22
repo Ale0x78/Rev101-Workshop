@@ -1,6 +1,9 @@
 # Rev101-Workshop
 
-These are the source files and binarier for a workshop I ran for NCSU's CSC405 class
+
+These were the workshop files for a reverse engineering workshop I ran for CSC 405—Computer Security at NC State University. 
+
+
 
 
 # See also
